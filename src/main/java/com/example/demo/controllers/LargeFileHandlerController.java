@@ -2,9 +2,7 @@ package com.example.demo.controllers;
 
 
 import com.example.demo.services.LargeFileHandlerService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
@@ -18,7 +16,18 @@ public class LargeFileHandlerController {
     }
 
     @GetMapping("/large-file")
-    public String GetLargeFile(@RequestParam(value = "id", defaultValue = "0") String id) throws IOException {
-        return _largeFileHandlerService.GetLargeFile();
+    public String GetFile(@RequestParam(value = "filename", defaultValue = "test.txt") String filename) throws IOException {
+//        return _largeFileHandlerService.GetFile("");
+        return _largeFileHandlerService.AddFile("");
+    }
+
+    @PostMapping("/large-file")
+    public String AddFile(@RequestParam(value = "filename", defaultValue = "test.txt") String id) throws IOException {
+        return _largeFileHandlerService.AddFile("");
+    }
+
+    @DeleteMapping ("/large-file")
+    public String DeleteFile(@RequestParam(value = "id", defaultValue = "0") String id) throws IOException {
+        return _largeFileHandlerService.DeleteFile("");
     }
 }

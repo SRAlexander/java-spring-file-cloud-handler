@@ -1,2 +1,6 @@
-# java-spring-file-cloud-handler
-Exploring file handling within Cloud environments
+
+Required Local Variables
+
+AZURE_ACCOUNT_NAME
+AZURE_ACCOUNT_KEY
+AZURE_MAIN_CONTAINER
