@@ -16,7 +16,7 @@ import java.util.Locale;
 
 
 @Service
-public class AzureStorageService implements StorageServiceInterface {
+public class AzureStorageService implements StorageService {
 
     // Configuration singleton parameters
     private String _accountName;

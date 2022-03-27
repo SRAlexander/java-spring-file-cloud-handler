@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 
 
 @Service
-public class AWSStorageService implements StorageServiceInterface {
+public class AWSStorageService implements StorageService {
 
     // Configuration singleton parameters
     private String _bucketName;

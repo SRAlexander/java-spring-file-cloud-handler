@@ -9,7 +9,7 @@ import java.util.Map;
 
 
 @Service
-public class LocalStorageService implements StorageServiceInterface {
+public class LocalStorageService implements StorageService {
 
     // Configuration singleton parameters
     private final Map<String, byte[]> storage;

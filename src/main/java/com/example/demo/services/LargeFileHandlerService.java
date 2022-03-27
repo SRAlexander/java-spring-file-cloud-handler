@@ -1,6 +1,6 @@
 package com.example.demo.services;
 
-import com.example.demo.common.storageServices.AWSStorageService;
+import com.example.demo.common.storageServices.StorageService;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -9,24 +9,24 @@ import java.time.LocalDateTime;
 @Service
 public class LargeFileHandlerService {
 
-    private final AWSStorageService _azureStorageService;
+    private final StorageService _storageService;
 
-    public LargeFileHandlerService(AWSStorageService azureStorageService) {
-        _azureStorageService = azureStorageService;
+    public LargeFileHandlerService(StorageService storageService) {
+        _storageService = storageService;
     }
 
     public String AddFile(String filename) throws IOException {
-        _azureStorageService.UploadFile("saTestFile" + LocalDateTime.now().toString() + ".txt", "Hello Main Test");
+        _storageService.UploadFile("saTestFile" + LocalDateTime.now().toString() + ".txt", "Hello Main Test");
         return "File Added";
     }
 
     public String GetFile(String filename) throws IOException {
-        _azureStorageService.DownloadFile(filename);
+        _storageService.DownloadFile(filename);
         return "File Retrieved";
     }
 
     public String DeleteFile(String filename) {
-        _azureStorageService.DeleteFile(filename);
+        _storageService.DeleteFile(filename);
         return "File Deleted";
     }
 }
